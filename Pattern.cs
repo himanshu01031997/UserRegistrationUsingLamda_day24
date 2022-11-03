@@ -39,5 +39,15 @@ namespace UserRegistrationUsingLamdaDay24
                 return "Email is invalid";
 
         };
+        public const string MOBILE = "^[9]{1}[1]{1}[\\s][6-9]{1}[0-9]{9}";
+        public static Func<string, string> checkphoneno = (phone) =>
+        {
+            Regex regex = new Regex(MOBILE);
+            if (regex.IsMatch(phone))
+                return "Phoneno is valid";
+            else
+                return "Phoneno is invalid";
+
+        };
     }
 }

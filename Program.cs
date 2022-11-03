@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("enter your choice:");
-            Console.WriteLine("1.FirstName\n2.LastName\n3.Email\n");
+            Console.WriteLine("1.FirstName\n2.LastName\n3.Email\n4.PhoneNo\n");
             int choice= Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -26,6 +26,12 @@
                     string email = Console.ReadLine();
                     string result2 = Pattern.checkemail(email);
                     Console.WriteLine(result2);
+                    break;
+                case 4:
+                    Console.WriteLine("enter the mobile:");
+                    string phone = Console.ReadLine();
+                    string result3 = Pattern.checkemail(phone);
+                    Console.WriteLine(result3);
                     break;
 
                 default:

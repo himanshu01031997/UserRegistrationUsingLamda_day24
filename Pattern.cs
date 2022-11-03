@@ -19,6 +19,15 @@ namespace UserRegistrationUsingLamdaDay24
                 return "firstname is invalid";
 
         };
+        public const String LAST_NAME = "^[A-Z]{1}[a-zA-Z]{2,}$";
+        public static Func<string, string> checklastname = (lastname) =>//func delegate which accept <input ,output> nameofdelegate =input => 
+        {
+            Regex regex = new Regex(LAST_NAME);
+            if (regex.IsMatch(lastname))
+                return "lastname is valid";
+            else
+                return "lastname is invalid";
 
+        };
     }
 }

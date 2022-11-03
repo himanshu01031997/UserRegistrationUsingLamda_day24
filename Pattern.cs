@@ -29,5 +29,15 @@ namespace UserRegistrationUsingLamdaDay24
                 return "lastname is invalid";
 
         };
+        public const string EMAIL= "^[A-Za-z0-9]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}$";
+        public static Func<string, string> checkemail = (email) =>
+        {
+            Regex regex = new Regex(EMAIL);
+            if (regex.IsMatch(email))
+                return "Email is valid";
+            else
+                return "Email is invalid";
+
+        };
     }
 }

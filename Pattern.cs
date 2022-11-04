@@ -39,15 +39,25 @@ namespace UserRegistrationUsingLamdaDay24
                 return "Email is invalid";
 
         };
-        public const string MOBILE = "^[9]{1}[1]{1}[\\s][6-9]{1}[0-9]{9}";
-        public static Func<string, string> checkphoneno = (phone) =>
+        public const string PHONENO = "^[1-9]{2}[ ][0-9]{10}$";
+        public static Func<string, string> checkphone = (phone) =>
         {
-            Regex regex = new Regex(MOBILE);
+            Regex regex = new Regex(PHONENO);
             if (regex.IsMatch(phone))
-                return "Phoneno is valid";
+                return "phone no is valid";
             else
-                return "Phoneno is invalid";
+                return "phone no is invalid";
 
         };
+        public const string PREDEFINEDPW = "^[a-zA-Z]{8,}$";
+        public static Func<string, string> checkpw = (password) =>
+        {
+            Regex regex = new Regex(PREDEFINEDPW);
+            if (regex.IsMatch(password))
+                return "password is valid";
+            else
+                return "password is invalid";
+        };
+
     }
 }

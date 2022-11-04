@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("enter your choice:");
-            Console.WriteLine("1.FirstName\n2.LastName\n3.Email\n4.PhoneNo\n5.password\n");
+            Console.WriteLine("1.FirstName\n2.LastName\n3.Email\n4.PhoneNo\n5.password\n6.validateUpperCase\n");
             int choice= Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
@@ -38,6 +38,12 @@
                     string password = Console.ReadLine();
                     string result4 = Pattern.checkpw(password);
                     Console.WriteLine(result4);
+                    break;
+                case 6:
+                    Console.WriteLine("enter the password:");
+                    string password1 = Console.ReadLine();
+                    string result5 = Pattern.checkupper(password1);
+                    Console.WriteLine(result5);
                     break;
 
 

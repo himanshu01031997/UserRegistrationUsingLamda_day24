@@ -58,6 +58,16 @@ namespace UserRegistrationUsingLamdaDay24
             else
                 return "password is invalid";
         };
+        public const string PW_ONEUPPERCASE = "^[A-Z]{1}[a-zA-Z0-9]{7,}$";
+        public static Func<string, string> checkupper = (password1) =>
+        {
+            Regex regex = new Regex(PW_ONEUPPERCASE);
+            if (regex.IsMatch(password1))
+                return "password is valid";
+            else
+                return "password is invalid";
+        };
+
 
     }
 }

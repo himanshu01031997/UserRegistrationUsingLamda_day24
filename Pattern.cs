@@ -67,6 +67,15 @@ namespace UserRegistrationUsingLamdaDay24
             else
                 return "password is invalid";
         };
+        public const string PW_NUMERICCASE = "^[1-9]{1}[a-zA-Z0-9]{7,}$";
+        public static Func<string, string> checknumeric = (password2) =>
+        {
+            Regex regex = new Regex(PW_NUMERICCASE);
+            if (regex.IsMatch(password2))
+                return "password is valid";
+            else
+                return "password is invalid";
+        };
 
 
     }
